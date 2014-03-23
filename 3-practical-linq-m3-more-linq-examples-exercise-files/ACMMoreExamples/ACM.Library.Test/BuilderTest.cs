@@ -37,7 +37,7 @@ namespace ACM.Library.Test
             Builder listBuilder = new Builder();
 
             // Act
-            var result = listBuilder.BuildStringSequence();
+            var result = listBuilder.BuildStringSequence().OrderBy(s => s);
 
             // Analyze
             foreach (var item in result)

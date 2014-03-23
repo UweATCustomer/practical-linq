@@ -19,11 +19,19 @@ namespace ACM.Library
 
         public IEnumerable<string> BuildStringSequence()
         {
-            //Random rand = new Random();
-            //var strings = Enumerable.Range(0, 10)
-            //                .Select(i => ((char)('A' + rand.Next(0,26))).ToString());
+            Random rand = new Random();            
+            string tempstr;
+            var strings = new List<string>();
 
-            var strings = Enumerable.Repeat("A", 10);
+            for (int ii = 0; ii < 100; ii++)
+            {
+                tempstr = Enumerable.Range(0, 10).Select(i => ((char)('A' + rand.Next(0, 26))).ToString()).Aggregate((i, j) => i + j);
+                strings.Add(tempstr);
+
+            }
+            
+            //var strings = Enumerable.Repeat("A", 10);
+
             return strings;
         }
 
